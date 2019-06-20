@@ -11,7 +11,7 @@ script:
 
 deploy:
   provider: pages
-  skip_cleanup: true
+  skip_cleanup: false
   github_token: $gt
   local_dir: build
   on:
