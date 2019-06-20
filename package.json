@@ -1,14 +1,25 @@
 {
-  "name": "fullthrottlefrontendtest",
-  "version": "0.1.0",
-  "private": true,
+  "name": "loancalculator",
+  "version": "1.0.0",
+  "description": "Loan Calculator according to the API",
+  "author": "Piyush Mehta",
+  "license": "MIT",
+  "homepage": "https://piyush97.github.io/loancalculator/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piyush97/loancalculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/piyush97/loancalculator/issues"
+  },
   "dependencies": {
     "antd": "^3.19.6",
     "axios": "^0.19.0",
     "material-kit-react": "^1.7.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "readme-md-generator": "^0.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,5 +45,9 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.13.0"
+  },
+  "engines": {
+    "npm": ">=5.5.0",
+    "node": ">=9.3.0"
   }
 }
