@@ -39,7 +39,7 @@ export default class componentName extends Component {
         this.setState({ data: response.data });
       })
       .catch(e => {
-        this.openNotification(e);
+        this.openNotification(e.message);
       });
   };
 
@@ -54,7 +54,7 @@ export default class componentName extends Component {
         this.setState({ data: response.data });
       })
       .catch(e => {
-        this.openNotification(e);
+        this.openNotification(e.message);
       });
     this.setState({
       period: event
