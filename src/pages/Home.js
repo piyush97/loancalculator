@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Layout, Menu, Breadcrumb } from "antd";
 import "./Home.css";
-import { Slider, InputNumber, Row, Col } from "antd";
+import { Slider, Row, Col } from "antd";
 const { Header, Content, Footer } = Layout;
 
 export default class componentName extends Component {
