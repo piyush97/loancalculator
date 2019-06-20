@@ -28,6 +28,7 @@ export default class componentName extends Component {
   }
   componentDidMount() {}
   _onAmountChange = (event, value) => {
+    this.setState({ value: event });
     axios
       .get(
         `${baseURL}/interest?amount=${this.state.value}&numMonths=${
@@ -35,13 +36,11 @@ export default class componentName extends Component {
         }`
       )
       .then(response => {
-        console.log(response.data);
         this.setState({ data: response.data });
       })
       .catch(e => {
-        console.log(e);
+        this.openNotification(e);
       });
-    this.openNotification();
   };
 
   _onMonthChange = (event, value) => {
@@ -52,25 +51,20 @@ export default class componentName extends Component {
         }`
       )
       .then(response => {
-        console.log(response.data);
         this.setState({ data: response.data });
       })
       .catch(e => {
-        console.log(e);
+        this.openNotification(e);
       });
     this.setState({
       period: event
     });
-    console.log(event);
-    this.openNotification();
   };
-
-  openNotification = () => {
+  openNotification = e => {
     notification.open({
-      message: "Success"
+      message: e
     });
   };
-
   render() {
     var dataJ = this.state.data;
     return (
