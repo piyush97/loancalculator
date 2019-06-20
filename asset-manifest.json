@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/loancalculator/static/css/main.c80e3ac5.chunk.css",
+    "main.js": "/loancalculator/static/js/main.a791d7eb.chunk.js",
+    "main.js.map": "/loancalculator/static/js/main.a791d7eb.chunk.js.map",
+    "runtime~main.js": "/loancalculator/static/js/runtime~main.8d1e5932.js",
+    "runtime~main.js.map": "/loancalculator/static/js/runtime~main.8d1e5932.js.map",
+    "static/css/2.328f408e.chunk.css": "/loancalculator/static/css/2.328f408e.chunk.css",
+    "static/js/2.ecd47e91.chunk.js": "/loancalculator/static/js/2.ecd47e91.chunk.js",
+    "static/js/2.ecd47e91.chunk.js.map": "/loancalculator/static/js/2.ecd47e91.chunk.js.map",
+    "index.html": "/loancalculator/index.html",
+    "precache-manifest.b6c837691d6f13f5da8c14c11b2301b4.js": "/loancalculator/precache-manifest.b6c837691d6f13f5da8c14c11b2301b4.js",
+    "service-worker.js": "/loancalculator/service-worker.js",
+    "static/css/2.328f408e.chunk.css.map": "/loancalculator/static/css/2.328f408e.chunk.css.map",
+    "static/css/main.c80e3ac5.chunk.css.map": "/loancalculator/static/css/main.c80e3ac5.chunk.css.map"
+  }
+}
