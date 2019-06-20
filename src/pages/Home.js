@@ -1,26 +1,57 @@
 import React, { Component } from "react";
 import { Layout, Menu, Breadcrumb } from "antd";
-import "./Home.css";
+import axios from "axios";
 import { Slider, Row, Col } from "antd";
+
+import "./Home.css";
+import baseURL from "../utils/endpoints";
 const { Header, Content, Footer } = Layout;
 
 export default class componentName extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      inputAmoutValue: 1
+      value: 500,
+      period: 6,
+      data: null
     };
   }
-  _onAmountChange = value => {
-    this.setState({
-      inputAmountValue: value
-    });
+  _onAmountChange = (event, value) => {
+    axios
+      .get(
+        `${baseURL}/interest?amount=${this.state.value}&numMonths=${
+          this.state.period
+        }`
+      )
+      .then(response => {
+        console.log(response.data);
+        this.setState({ data: response.data });
+      })
+      .catch(e => {
+        console.log(e);
+      });
   };
-  _onMonthChange = value => {
+
+  _onMonthChange = (event, value) => {
+    axios
+      .get(
+        `${baseURL}/interest?amount=${this.state.value}&numMonths=${
+          this.state.period
+        }`
+      )
+      .then(response => {
+        console.log(response.data);
+        this.setState({ data: response.data });
+      })
+      .catch(e => {
+        console.log(e);
+      });
     this.setState({
-      inputAmountValue: value
+      period: event
     });
+    console.log(event);
   };
+
   render() {
     return (
       <div>
