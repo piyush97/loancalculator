@@ -1,10 +1,20 @@
 import React, { Component } from "react";
-import { Layout, Menu, Breadcrumb } from "antd";
 import axios from "axios";
-import { Slider, Row, Col } from "antd";
+import {
+  Divider,
+  Slider,
+  Row,
+  Col,
+  notification,
+  Typography,
+  Layout,
+  Menu,
+  Card,
+  Breadcrumb
+} from "antd";
 
 import "./Home.css";
-import baseURL from "../utils/endpoints";
+import baseURL from "../utils/API/endpoints";
 const { Header, Content, Footer } = Layout;
 
 export default class componentName extends Component {
@@ -16,6 +26,7 @@ export default class componentName extends Component {
       data: null
     };
   }
+  componentDidMount() {}
   _onAmountChange = (event, value) => {
     axios
       .get(
@@ -30,6 +41,7 @@ export default class componentName extends Component {
       .catch(e => {
         console.log(e);
       });
+    this.openNotification();
   };
 
   _onMonthChange = (event, value) => {
@@ -50,9 +62,17 @@ export default class componentName extends Component {
       period: event
     });
     console.log(event);
+    this.openNotification();
+  };
+
+  openNotification = () => {
+    notification.open({
+      message: "Success"
+    });
   };
 
   render() {
+    var dataJ = this.state.data;
     return (
       <div>
         <Layout className="layout">
@@ -76,7 +96,7 @@ export default class componentName extends Component {
             <div style={{ background: "#fff", padding: 34, minHeight: 720 }}>
               <Row>
                 <Col span={8}>
-                  <label> Loan</label>
+                  <Divider>Loan</Divider>
                   <Slider
                     min={500}
                     max={5000}
@@ -86,9 +106,34 @@ export default class componentName extends Component {
               </Row>
               <Row>
                 <Col span={8}>
-                  <label>Duration</label>
+                  <Divider>Duration</Divider>{" "}
                   <Slider min={6} max={24} onChange={this._onMonthChange} />
                 </Col>
+                {dataJ && (
+                  <Col span={12}>
+                    <center>
+                      <Row>
+                        <Card title="Interest Rate" style={{ width: 300 }}>
+                          <p>{dataJ.interestRate}</p>
+                        </Card>
+                      </Row>
+                      <Row>
+                        <Card title="Monthly Payment" style={{ width: 300 }}>
+                          <p>
+                            Amount: {dataJ.monthlyPayment.amount}{" "}
+                            {dataJ.monthlyPayment.currency}
+                          </p>
+                        </Card>
+                      </Row>
+                    </center>
+                  </Col>
+                )}
+                {!dataJ && (
+                  <Typography>
+                    {" "}
+                    Please Select Duration and Amount first
+                  </Typography>
+                )}
               </Row>
             </div>
           </Content>
