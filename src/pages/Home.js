@@ -26,7 +26,6 @@ export default class componentName extends Component {
       data: null
     };
   }
-  componentDidMount() {}
   _onAmountChange = (event, value) => {
     this.setState({ value: event });
     axios
@@ -36,7 +35,8 @@ export default class componentName extends Component {
         }`
       )
       .then(response => {
-        this.setState({ data: response.data });
+        if (response.status === 200) this.setState({ data: response.data });
+        else alert("Connect to Internet please");
       })
       .catch(e => {
         this.openNotification(e.message);
@@ -51,7 +51,8 @@ export default class componentName extends Component {
         }`
       )
       .then(response => {
-        this.setState({ data: response.data });
+        if (response.status) this.setState({ data: response.data });
+        else alert("Connect to Internet please");
       })
       .catch(e => {
         this.openNotification(e.message);
