@@ -125,6 +125,19 @@ export default class componentName extends Component {
                           </p>
                         </Card>
                       </Row>
+                      <Row>
+                        <Card title="Number of Payments" style={{ width: 300 }}>
+                          <p>Total Payments: {dataJ.numPayments} </p>
+                        </Card>
+                      </Row>
+                      <Row>
+                        <Card title="Principal" style={{ width: 300 }}>
+                          <p>
+                            Principal Amount: {dataJ.principal.amount}{" "}
+                            {dataJ.principal.currency}
+                          </p>
+                        </Card>
+                      </Row>
                     </center>
                   </Col>
                 )}
